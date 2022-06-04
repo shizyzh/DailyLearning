@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.szy.kt.activity.EventActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <com.szy.kt.view.EventLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.szy.kt.view.EventButton
+            android:id="@+id/event_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击事件"/>
+    </com.szy.kt.view.EventLinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
