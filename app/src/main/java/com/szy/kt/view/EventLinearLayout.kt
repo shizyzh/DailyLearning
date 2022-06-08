@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import com.szy.kt.util.LogUtil
 
 class EventLinearLayout : LinearLayout {
+    private var count = 0
 
     constructor(context: Context) : super(context)
 
@@ -18,10 +19,10 @@ class EventLinearLayout : LinearLayout {
         defStyleAttr
     )
 
-
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         LogUtil.i("EventLinearLayout-onTouchEvent-event:" + event?.action)
-        return super.onTouchEvent(event)
+        //return super.onTouchEvent(event)
+        return true
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -30,7 +31,12 @@ class EventLinearLayout : LinearLayout {
     }
 
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
-        LogUtil.i("EventLinearLayout-onInterceptTouchEvent-event:" + ev?.action)
-        return super.onInterceptTouchEvent(ev)
+        LogUtil.i("EventLinearLayout-onInterceptTouchEvent-event:" + ev?.action+",count:"+count)
+        count++
+//        if (count >= 5) {
+            return true
+//        } else {
+//            return super.onInterceptTouchEvent(ev)
+//        }
     }
 }

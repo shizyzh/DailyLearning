@@ -21,7 +21,7 @@ class EventButton : Button {
     )
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        LogUtil.i("EventButton-onTouchEvent," + event?.action)
+        LogUtil.i("EventButton-onTouchEvent," + event?.action+"，x:"+event?.getX()+",y:"+event?.getY())
         return super.onTouchEvent(event)
     }
 
